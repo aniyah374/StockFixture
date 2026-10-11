@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f2f4;
+  color: #111111;
+}
+
+#app {
+  width: 100%;
+  padding: 24px 32px 40px;
+}
+
+
+/* -------------------------
+   TOP HEADER
+------------------------- */
+
+header {
+  background-color: #ffffff;
+  min-height: 70px;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111111;
+}
+
+header h1::first-letter {
+  color: #4285f4;
+}
+
+header input {
+  width: 430px;
+  max-width: 45%;
+  padding: 13px 16px;
+  border: 1px solid #999999;
+  border-radius: 9px;
+  font-size: 16px;
+  outline: none;
+}
+
+header input:focus {
+  border-color: #4285f4;
+}
+
+
+/* -------------------------
+   WELCOME SECTION
+------------------------- */
+
+#app > section:first-of-type {
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 105px;
+}
+
+#app > section:first-of-type h2 {
+  font-size: 36px;
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+
+#app > section:first-of-type p {
+  font-size: 18px;
+  margin: 0;
+}
+
+#app > section:first-of-type button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+
+  background-color: #4285f4;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+
+  padding: 14px 36px;
+  font-size: 17px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+#app > section:first-of-type button:hover {
+  background-color: #2f6fd6;
+}
+
+
+/* -------------------------
+   NAVIGATION BUTTONS
+------------------------- */
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+nav button {
+  min-height: 78px;
+  padding: 18px;
+
+  background-color: #4285f4;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 11px;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+nav button:hover {
+  background-color: #2f6fd6;
+  transform: translateY(-2px);
+}
+
+
+/* -------------------------
+   SUMMARY CARDS
+------------------------- */
+
+#app > section:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+#app > section:nth-of-type(2) div {
+  background-color: #ffffff;
+  min-height: 150px;
+  padding: 18px;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+#app > section:nth-of-type(2) div:nth-child(1) {
+  border-top: 5px solid #4285f4;
+}
+
+#app > section:nth-of-type(2) div:nth-child(2) {
+  border-top: 5px solid #ff4d4f;
+}
+
+#app > section:nth-of-type(2) div:nth-child(3) {
+  border-top: 5px solid #ffb347;
+}
+
+#app > section:nth-of-type(2) div:nth-child(4) {
+  border-top: 5px solid #c79ae0;
+}
+
+#app > section:nth-of-type(2) h3 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+#app > section:nth-of-type(2) p {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 400;
+}
+
+
+/* -------------------------
+   PRODUCT DETAILS SECTION
+------------------------- */
+
+#app > section:nth-of-type(3) {
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 24px 32px 34px;
+
+  overflow-x: auto;
+}
+
+#app > section:nth-of-type(3) h2 {
+  font-size: 30px;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+
+/* -------------------------
+   PRODUCT TABLE
+------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+thead {
+  background-color: #eeeeee;
+}
+
+th {
+  padding: 13px 15px;
+  text-align: left;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+
+  font-size: 16px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fb;
+}
+
+
+/* Rounded top of table */
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+
+/* -------------------------
+   SMALLER SCREENS
+------------------------- */
+
+@media (max-width: 1000px) {
+
+  nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #app > section:nth-of-type(2) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header input {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  #app {
+    padding: 18px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  header input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #app > section:first-of-type button {
+    position: static;
+    margin-top: 18px;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+  }
+
+  #app > section:nth-of-type(2) {
+    grid-template-columns: 1fr;
+  }
+
+  #app > section:first-of-type h2 {
+    font-size: 30px;
+  }
+}
+/* Summary card icons */
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.products-icon {
+  background-color: #4285f4;
+  color: white;
+}
+
+.low-stock-icon {
+  background-color: #ffd6d6;
+  color: #ff3333;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.performance-icon {
+  background-color: #ffd28c;
+}
+
+.alerts-icon {
+  background-color: #d5a7e3;
+}
+
+.summary-card small {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.upload-button {
+  position: absolute;
+  right: 0;
+  top: 5px;
+
+  background-color: #4285f4;
+  color: white;
+
+  border-radius: 10px;
+  padding: 14px 36px;
+
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background-color: #2f6fd6;
+}
+.hidden {
+  display: none !important;
+}
+.priority-high {
+  color: #d93025;
+  font-weight: bold;
+}
+
+.priority-medium {
+  color: #e69500;
+  font-weight: bold;
+}
+
+.priority-low {
+  color: #188038;
+  font-weight: bold;
+}
