@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StockFixture dashboard">
+
+  <title>StockFixture</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <main id="app">
+
+    <!-- Top of dashboard -->
+    <header>
+      <h1>StockFixture</h1>
+
+      <input
+        type="text"
+        id="productSearch"
+        placeholder="Search products..."
+      >
+    </header>
+
+
+    <!-- Welcome section -->
+    <section>
+      <h2>Hello, Allison!</h2>
+
+      <p>
+        Take a look at your inventory performance today.
+      </p>
+
+      <label for="csvFile" class="upload-button">
+        Upload CSV
+      </label>
+
+      <input
+        type="file"
+        id="csvFile"
+        accept=".csv"
+        hidden
+      >
+    </section>
+
+
+    <!-- Navigation -->
+    <nav>
+      <button id="dashboardBtn">Dashboard</button>
+
+      <button id="performanceBtn">
+        Product Performance
+      </button>
+
+      <button id="inventoryBtn">
+        Inventory
+      </button>
+
+      <button id="restockingBtn">
+        Restocking Priorities
+      </button>
+    </nav>
+
+
+    <!-- Dashboard summary cards -->
+    <section
+      id="dashboardSummary"
+      class="summary-cards"
+    >
+
+      <div class="summary-card">
+        <span class="card-icon products-icon">📋</span>
+
+        <h3>Total Products</h3>
+
+        <p id="totalProducts">0</p>
+
+        <small>Check Total Products</small>
+      </div>
+
+
+      <div class="summary-card">
+        <span class="card-icon low-stock-icon">!</span>
+
+        <h3>Low Stock Items</h3>
+
+        <p id="lowStockItems">0</p>
+
+        <small>Check Low Stock Items Here</small>
+      </div>
+
+
+      <div class="summary-card">
+        <span class="card-icon performance-icon">📊</span>
+
+        <h3>Product Performance</h3>
+
+        <p id="productPerformance">0</p>
+
+        <small>Check Product Performance Here</small>
+      </div>
+
+
+      <div class="summary-card">
+        <span class="card-icon alerts-icon">🔔</span>
+
+        <h3>Alerts</h3>
+
+        <p id="alerts">0</p>
+
+        <small>Check Alerts Here</small>
+      </div>
+
+    </section>
+
+
+    <!-- Inventory / Product table -->
+    <section id="inventorySection">
+
+      <h2>Product Details</h2>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>SKU</th>
+            <th>Quantity</th>
+            <th>Total Purchases</th>
+            <th>Quantity Remaining</th>
+          </tr>
+        </thead>
+
+        <tbody id="productTableBody">
+        </tbody>
+
+      </table>
+
+    </section>
+
+        <!-- Product Performance section -->
+    <section id="performanceSection" class="hidden">
+
+      <h2>Product Performance</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Total Purchases</th>
+            <th>Sell-Through Rate</th>
+            <th>Performance Status</th>
+            <th>Feedback</th>
+            <th>Pricing Feedback</th>
+          </tr>
+        </thead>
+
+        <tbody id="performanceTableBody">
+        </tbody>
+      </table>
+
+    </section>
+
+<!-- Restocking Priorities section -->
+<section id="restockingSection" class="hidden">
+
+  <h2>Restocking Priorities</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity Remaining</th>
+        <th>Sell-Through Rate</th>
+        <th>Priority</th>
+        <th>Recommendation</th>
+      </tr>
+    </thead>
+
+    <tbody id="restockingTableBody">
+    </tbody>
+  </table>
+
+</section>
+
+
+  </main>
+
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
