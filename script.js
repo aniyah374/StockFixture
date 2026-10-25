@@ -196,6 +196,7 @@ function displayInventory(products) {
 
     }
 
+
     // Inventory table
 
     let inventoryRow = document.createElement("tr");
@@ -221,7 +222,6 @@ function displayInventory(products) {
 
     }
 
-    // This allows old saved inventory to still work
     else if (product.supplierCost !== undefined) {
 
       costPerUnit = product.supplierCost;
@@ -550,6 +550,7 @@ csvFile.addEventListener("change", function() {
       "Price"
     ];
 
+
     // Check missing columns
 
     let missingHeaders = [];
@@ -681,7 +682,8 @@ csvFile.addEventListener("change", function() {
 
       }
 
-      // Check for missing information
+
+      // Check missing information
 
       if (
         productName === "" ||
@@ -703,6 +705,7 @@ csvFile.addEventListener("change", function() {
         return;
 
       }
+
 
       // Check numbers
 
@@ -747,6 +750,7 @@ csvFile.addEventListener("change", function() {
 
       }
 
+
       // Save product
 
       let product = {
@@ -771,9 +775,11 @@ csvFile.addEventListener("change", function() {
 
       };
 
+
       products.push(product);
 
     }
+
 
     // Save inventory in browser
 
@@ -789,9 +795,11 @@ csvFile.addEventListener("change", function() {
 
   };
 
+
   reader.readAsText(file);
 
 });
+
 
 // Load saved inventory after refresh
 
@@ -829,6 +837,7 @@ if (savedInventory) {
 
 }
 
+
 // Product search
 
 productSearch.addEventListener("input", function() {
@@ -849,11 +858,13 @@ productSearch.addEventListener("input", function() {
         .textContent
         .toLowerCase();
 
+
     let sku =
       productRows[i]
         .cells[1]
         .textContent
         .toLowerCase();
+
 
     if (
       productName.includes(searchText) ||
@@ -873,6 +884,7 @@ productSearch.addEventListener("input", function() {
   }
 
 });
+
 
 // Dashboard button
 
@@ -907,6 +919,7 @@ inventoryBtn.addEventListener("click", function() {
 
 });
 
+
 // Product Performance button
 
 performanceBtn.addEventListener("click", function() {
@@ -940,6 +953,7 @@ restockingBtn.addEventListener("click", function() {
 
 });
 
+
 // Cost Per Unit button
 
 costBtn.addEventListener("click", function() {
@@ -956,6 +970,7 @@ costBtn.addEventListener("click", function() {
 
 });
 
+
 // Welcome name popup
 
 const namePopup = document.getElementById("namePopup");
@@ -967,7 +982,11 @@ const nameError = document.getElementById("nameError");
 
 // Check if a name was already saved
 
-let savedName = localStorage.getItem("stockFixtureUserName");
+let savedName =
+  localStorage.getItem(
+    "stockFixtureUserName"
+  );
+
 
 if (savedName) {
 
@@ -976,28 +995,34 @@ if (savedName) {
   namePopup.style.display = "none";
 
 }
+
 // Save name
 
 saveNameBtn.addEventListener("click", function() {
 
-  let newName = nameInput.value.trim();
+  let newName =
+    nameInput.value.trim();
 
 
   if (newName === "") {
 
-    nameError.textContent = "Please enter your name.";
+    nameError.textContent =
+      "Please enter your name.";
 
     return;
 
   }
 
-Storage.setItem(
+  localStorage.setItem(
     "stockFixtureUserName",
     newName
   );
 
-  userName.textContent = newName;
+  userName.textContent =
+    newName;
 
-  namePopup.style.display = "none";
+
+  namePopup.style.display =
+    "none";
 
 });
