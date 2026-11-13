@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StockFixture dashboard">
+  <meta name="description" content="StockFixture inventory dashboard">
 
   <title>StockFixture</title>
 
@@ -43,7 +43,7 @@
 
   <main id="app">
 
-    <!-- Top of dashboard -->
+    <!-- Header -->
     <header>
 
       <h1>StockFixture</h1>
@@ -57,8 +57,8 @@
     </header>
 
 
-    <!-- Welcome section -->
-    <section>
+    <!-- Welcome Section -->
+    <section id="welcomeSection">
 
       <h2>
         Hello, <span id="userName">User</span>!
@@ -68,11 +68,12 @@
         Take a look at your inventory performance today.
       </p>
 
-      <label for="csvFile" class="upload-button">
+      <label
+        for="csvFile"
+        class="upload-button"
+      >
         Upload CSV
       </label>
-
-      <p id="csvError" class="csv-error"></p>
 
       <input
         type="file"
@@ -80,6 +81,11 @@
         accept=".csv"
         hidden
       >
+
+      <p
+        id="csvError"
+        class="csv-error"
+      ></p>
 
     </section>
 
@@ -91,12 +97,12 @@
         Dashboard
       </button>
 
-      <button id="performanceBtn">
-        Product Performance
-      </button>
-
       <button id="inventoryBtn">
         Inventory
+      </button>
+
+      <button id="performanceBtn">
+        Product Performance
       </button>
 
       <button id="restockingBtn">
@@ -107,11 +113,18 @@
         Cost Per Unit
       </button>
 
+      <button id="plannerBtn">
+        Restocking Planner
+      </button>
+
     </nav>
 
 
-    <!-- Dashboard summary cards -->
-    <section id="dashboardSummary" class="summary-cards">
+    <!-- Dashboard Summary -->
+    <section
+      id="dashboardSummary"
+      class="summary-cards"
+    >
 
       <div class="summary-card">
 
@@ -183,7 +196,7 @@
     </section>
 
 
-    <!-- Inventory / Product table -->
+    <!-- Inventory -->
     <section id="inventorySection">
 
       <h2>Product Details</h2>
@@ -212,7 +225,10 @@
 
 
     <!-- Cost Per Unit -->
-    <section id="costSection" class="hidden">
+    <section
+      id="costSection"
+      class="hidden"
+    >
 
       <h2>Cost Per Unit</h2>
 
@@ -242,7 +258,10 @@
 
 
     <!-- Product Performance -->
-    <section id="performanceSection" class="hidden">
+    <section
+      id="performanceSection"
+      class="hidden"
+    >
 
       <h2>Product Performance</h2>
 
@@ -270,7 +289,10 @@
 
 
     <!-- Restocking Priorities -->
-    <section id="restockingSection" class="hidden">
+    <section
+      id="restockingSection"
+      class="hidden"
+    >
 
       <h2>Restocking Priorities</h2>
 
@@ -295,6 +317,118 @@
 
     </section>
 
+
+    <!-- Budget-Based Restocking Planner -->
+    <section
+      id="plannerSection"
+      class="hidden"
+    >
+
+      <h2>Budget-Based Restocking Planner</h2>
+
+      <p>
+        Enter your total restocking budget and, if needed, set aside part of it
+        as a cash reserve. StockFixture will recommend which products to restock first.
+      </p>
+
+
+      <div class="planner-inputs">
+
+        <div>
+
+          <label for="restockBudget">
+            Restocking Budget
+          </label>
+
+          <input
+            type="number"
+            id="restockBudget"
+            min="0"
+            step="0.01"
+            placeholder="300.00"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="cashReserve">
+            Cash Reserve
+          </label>
+
+          <input
+            type="number"
+            id="cashReserve"
+            min="0"
+            step="0.01"
+            placeholder="75.00"
+          >
+
+        </div>
+
+      </div>
+
+
+      <p class="available-budget">
+        Available for Restocking:
+        $<span id="availableRestockBudget">0.00</span>
+      </p>
+
+
+      <button
+        id="createPlanBtn"
+        class="create-plan-button"
+      >
+        Create Restocking Plan
+      </button>
+
+
+      <p
+        id="plannerError"
+        class="planner-error"
+      ></p>
+
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Product Name</th>
+            <th>Priority</th>
+            <th>Quantity Remaining</th>
+            <th>Sell-Through Rate</th>
+            <th>Cost Per Unit</th>
+            <th>Suggested Quantity</th>
+            <th>Your Quantity</th>
+            <th>Estimated Cost</th>
+            <th>Reason</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="restockPlanTableBody">
+        </tbody>
+
+      </table>
+
+
+      <div class="planner-results">
+
+        <p>
+          Planned Spending:
+          $<span id="plannedSpending">0.00</span>
+        </p>
+
+        <p>
+          Money Remaining:
+          $<span id="budgetRemaining">0.00</span>
+        </p>
+
+      </div>
+
+    </section>
 
   </main>
 
