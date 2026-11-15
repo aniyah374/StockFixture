@@ -1,6 +1,6 @@
 StockFixture
 
-StockFixture is a web-based inventory and restocking dashboard designed for small e-commerce sellers. It allows users to upload inventory information through a CSV file, monitor product performance, identify products that may need to be restocked, enter product costs, and create a restocking plan based on a specific budget.
+StockFixture is a web-based inventory and restocking dashboard designed for small e-commerce sellers. It allows users to upload inventory information through a CSV file, monitor product performance, identify products that may need to be restocked, enter product costs and create a restocking plan based on a specific budget.
 
 
 Project Files
