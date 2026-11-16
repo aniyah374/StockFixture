@@ -111,4 +111,122 @@ Products may be categorized as:
 - Needs Attention
 - Poor Performance
 
-The performance status is determined using the product's sell
+The performance status is determined using the product's sell-through rate.
+
+## 10. Restocking Priorities
+
+To view Restocking Priorities:
+
+1. Select **Restocking Priorities** from the navigation menu.
+2. Review each product's quantity remaining.
+3. Review each product's sell-through rate.
+4. Review the priority assigned to each product.
+5. Review the restocking recommendation.
+
+StockFixture assigns products one of the following priorities:
+
+- High Priority
+- Medium Priority
+- Low Priority
+
+The priority is determined using the product's quantity remaining and sell-through rate.
+
+## 11. Cost Per Unit
+
+To enter Cost Per Unit information:
+
+1. Select **Cost Per Unit** from the navigation menu.
+2. Locate the product you want to update.
+3. Enter the amount it costs to purchase or produce one unit of the product.
+4. Repeat this process for additional products if needed.
+
+The Cost Per Unit values are used by the Budget-Based Restocking Planner.
+
+## 12. Budget-Based Restocking Planner
+
+To use the Budget-Based Restocking Planner:
+
+1. Select **Restocking Planner** from the navigation menu.
+2. Enter a **Restocking Budget**.
+3. Enter a **Cash Reserve** if you want to keep part of the budget available.
+4. Select **Create Restocking Plan**.
+5. StockFixture calculates how much money is available for restocking.
+6. The planner creates suggested restocking quantities.
+
+The recommendations are based on:
+
+- Product priority
+- Sell-through rate
+- Quantity remaining
+- Cost Per Unit
+- Available budget
+
+The Restocking Planner displays:
+
+1. Product Name
+2. Restocking Priority
+3. Quantity Remaining
+4. Sell-Through Rate
+5. Cost Per Unit
+6. Suggested Quantity
+7. Your Quantity
+8. Estimated Cost
+9. Reason for the recommendation
+
+## 13. Changing Restocking Quantities
+
+The **Your Quantity** field can be changed by the user.
+
+To change the quantity:
+
+1. Locate the product in the Restocking Planner.
+2. Change the number under **Your Quantity**.
+3. StockFixture automatically recalculates the Estimated Cost.
+4. The Planned Spending total is updated.
+5. The Money Remaining total is updated.
+
+If the selected quantities exceed the available restocking budget, StockFixture displays a warning.
+
+## 14. Testing StockFixture
+
+To confirm that StockFixture is working correctly:
+
+1. Open `index.html`.
+2. Enter a name into the welcome popup.
+3. Select **Continue**.
+4. Upload the sample CSV file included in the repository.
+5. Confirm that the Dashboard displays the uploaded product information.
+6. Confirm that the Total Products and other dashboard values are displayed.
+7. Open the **Inventory** section.
+8. Search for a product using its name or SKU.
+9. Open **Product Performance**.
+10. Review the calculated sell-through rates and performance statuses.
+11. Open **Restocking Priorities**.
+12. Confirm that products are assigned High, Medium, or Low priorities.
+13. Open **Cost Per Unit**.
+14. Enter Cost Per Unit values for products.
+15. Open the **Restocking Planner**.
+16. Enter a restocking budget.
+17. Enter an optional cash reserve.
+18. Select **Create Restocking Plan**.
+19. Review the suggested quantities and estimated costs.
+20. Change a value under **Your Quantity**.
+21. Confirm that Planned Spending and Money Remaining update automatically.
+22. Enter quantities that exceed the available budget.
+23. Confirm that StockFixture displays an over-budget warning.
+
+## 15. Technologies Used
+
+StockFixture was developed using:
+
+1. HTML
+2. CSS
+3. JavaScript
+4. CSV files
+5. Browser Local Storage
+6. GitHub
+
+## Author
+
+Aniyah Campbell  
+IST 440W – Fall 2026
